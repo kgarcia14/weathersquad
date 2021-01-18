@@ -3,35 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Front End Project</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <main>
-        <h1>Get Current Weather For...</h1>
-        <form id="generateWeather" action="#" method="POST">
-            <label>
-                City:
-                <input
-                    type="text"
-                    name="cityInput"
-                    id="cityInput"
-                    placeholder="Enter name of city here"
-                />
-            </label>
-            <label>
-                State:
-                <input
-                    type="text"
-                    name="stateInput"
-                    id="stateInput"
-                    placeholder="Enter state code here"
-                />
-            </label>
-            <button type="submit">Get Current Weather</button>
-        </form>
-        <section id="reportWeatherData" class="reportWeatherData">
-            <h3>Reporting Weather Conditions For <span class="location_placeholder"></span>, <span class="location_placeholder"></span></h3>
+    <main class="main-container">
+        <h2>What's The Weather?</h2>
+        <div>
+            <form class="form-container" id="generateWeather" action="#" method="POST">
+                <div>
+                    <label>
+                        City:
+                        <input
+                            type="text"
+                            name="cityInput"
+                            id="cityInput"
+                            class="input"
+                            placeholder="Enter name of city here"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        State:
+                        <input
+                            type="text"
+                            name="stateInput"
+                            id="stateInput"
+                            class ="input"
+                            placeholder="Enter state code here"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Country Code:
+                        <input
+                            type="text"
+                            name="countryInput"
+                            id="countryInput"
+                            class ="input"
+                            placeholder="Enter country code here"
+                        />
+                    </label>
+                </div>
+                <button type="submit" id="btn">Submit</button>
+            </form>
+        </div>
+        <div id="reportWeatherData" class="reportWeatherData">
+            <h3>Reporting Weather Conditions For <span class="location_placeholder"></span><span class="location_placeholder"></span><span class="location_placeholder"></span></h3>
             <div>
                 <p>Current Temperature:</p>
                 <div id="reportCurrentTemp"></div>
@@ -52,7 +72,7 @@
                 <p>Low:</p>
                 <div id="reportLow"></div>
             </div>
-        </section>
+        </div>
     </main>
 </body>
 <script src="scripts/get.js"></script>
