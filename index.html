@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Get Current Weather For...</h1>
+        <form id="generateWeather" action="#" method="POST">
+            <label>
+                City:
+                <input
+                    type="text"
+                    name="cityInput"
+                    id="cityInput"
+                    placeholder="Enter name of city here"
+                />
+            </label>
+            <label>
+                State:
+                <input
+                    type="text"
+                    name="stateInput"
+                    id="stateInput"
+                    placeholder="Enter state code here"
+                />
+            </label>
+            <button type="submit">Get Current Weather</button>
+        </form>
+        <section id="reportWeatherData" class="reportWeatherData">
+            <h3>Reporting Weather Conditions For <span class="location_placeholder"></span>, <span class="location_placeholder"></span></h3>
+            <div>
+                <p>Current Temperature:</p>
+                <div id="reportCurrentTemp"></div>
+            </div>
+            <div>
+                <p>Feels Like:</p>
+                <div id="reportFeelsLike"></div>
+            </div>
+            <div>
+                <p>Current Conditions:</p>
+                <div id="reportDescription"></div>
+            </div>
+            <div>
+                <p>High:</p>
+                <div id="reportHigh"></div>
+            </div>
+            <div>
+                <p>Low:</p>
+                <div id="reportLow"></div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="scripts/get.js"></script>
+<script src="scripts/scripts.js"></script>
+</html>
