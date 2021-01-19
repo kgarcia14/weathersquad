@@ -7,51 +7,59 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <nav class=" nav-container">
+        <img class="logo" src="images/weatherSquadlogoblue.png" alt="app logo">
+        <div>
+            <a class="about" href="#">About Us</a>
+            <a class="contact" href="#">Contact</a>
+        </div>
+    </nav>
     <main class="main-container">
-        <h2>What's The Weather?</h2>
         <div>
             <form class="form-container" id="generateWeather" action="#" method="POST">
-                <div>
+                <div class="label-container">
                     <label>
-                        City:
+                        City
                         <input
                             type="text"
                             name="cityInput"
                             id="cityInput"
                             class="input"
-                            placeholder="Enter name of city here"
+                            placeholder="Enter name of city"
                         />
                     </label>
                 </div>
-                <div>
+                <div class="label-container">
                     <label>
-                        State:
+                        State
                         <input
                             type="text"
                             name="stateInput"
                             id="stateInput"
                             class ="input"
-                            placeholder="Enter state code here"
+                            placeholder="Enter state code"
                         />
                     </label>
                 </div>
-                <div>
+                <div class="label-container">
                     <label>
-                        Country Code:
+                        Country Code
                         <input
                             type="text"
                             name="countryInput"
                             id="countryInput"
                             class ="input"
-                            placeholder="Enter country code here"
+                            placeholder="Enter country code"
                         />
                     </label>
                 </div>
-                <button type="submit" id="btn">Submit</button>
+                <button type="submit" id="btn">Search</button>
             </form>
         </div>
+
+
         <div id="reportWeatherData" class="reportWeatherData">
-            <h3>Reporting Weather Conditions For <span class="location_placeholder"></span><span class="location_placeholder"></span><span class="location_placeholder"></span></h3>
+            <span class="location_placeholder"></span><span class="location_placeholder"></span><span class="location_placeholder"></span><button class="unit-btn">F</button><button class="unit-btn-celsius">C</button>
             <div>
                 <p>Current Temperature:</p>
                 <div id="reportCurrentTemp"></div>
