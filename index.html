@@ -31,26 +31,20 @@
                 </div>
                 <div class="label-container">
                     <label>
-                        State
-                        <input
-                            type="text"
-                            name="stateInput"
-                            id="stateInput"
-                            class ="input"
-                            placeholder="Enter state code"
-                        />
+                        State:
+                        <select id="stateInput">
+                            <option>Select State</option>
+                            <option>None</option>
+                        </select>
                     </label>
                 </div>
                 <div class="label-container">
                     <label>
-                        Country Code
-                        <input
-                            type="text"
-                            name="countryInput"
-                            id="countryInput"
-                            class ="input"
-                            placeholder="Enter country code"
-                        />
+                        Country:
+                        <select id="countryInput">
+                            <option>Select Country</option>
+                            <option>USA</option>
+                        </select>
                     </label>
                 </div>
                 <button type="submit" id="btn">Search</button>
@@ -59,7 +53,8 @@
 
 
         <div id="reportWeatherData" class="reportWeatherData">
-            <span class="location_placeholder"></span><span class="location_placeholder"></span><span class="location_placeholder"></span><button class="unit-btn">F</button><button class="unit-btn-celsius">C</button>
+            <span class="location_placeholder"></span>
+            <span class="location_placeholder"></span><button class="unit-btn">F</button><button class="unit-btn-celsius">C</button>
             <div>
                 <p>Current Temperature:</p>
                 <div id="reportCurrentTemp"></div>

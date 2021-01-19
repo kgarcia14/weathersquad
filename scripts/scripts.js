@@ -6,34 +6,82 @@ const generateWeather = document.querySelector('#generateWeather')
 generateWeather.addEventListener('submit', event => {
     event.preventDefault();
 
-    const inputSelectors = document.querySelectorAll('input');
-    const placeholders = document.querySelectorAll('.location_placeholder');
+    const citySelector = document.querySelector('#cityInput');
+    const stateSelector = document.querySelector('#stateInput')
+    const countrySelector = document.querySelector('#countryInput')
 
-    let inputArray = [];
-    inputSelectors.forEach(inputItem => {
-        inputArray.push(inputItem);
-    })
-
-    // Need to update to pull city and country from API (not user input).
-    // As far as printing the state, might could pull from separate API.
-    placeholders.forEach(function (placeholders, index) {
-        placeholders.innerHTML = inputArray[index].value;
-        getWeather(inputArray[0].value, inputArray[1].value, inputArray[2].value)
-    })
+    let inputArray = [citySelector, stateSelector, countrySelector];
+    getWeather(inputArray[0].value, inputArray[1].value, inputArray[2].value)
 });
 
 function getWeather(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
+    console.log(url);
     get(url).then(response => {
-        updateBody(response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
         console.log(response)
     });
-    console.log(url);
 }
 
+function getState() {
+    const url ="https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json";
+    get(url).then(response => {
+        buildStateList(response);
+    })
+
+    function buildStateList(responseObject) {
+        let stateArray = [];
+        responseObject.forEach(element => stateArray.push(element["abbreviation"]));
+        addStateSelectors(stateArray)
+    }
+
+    function addStateSelectors(array1) {
+        
+        const stateSelect = document.querySelector("#stateInput");
+        array1.map(state => {
+            let stateOption = document.createElement('option');
+            stateOption.value = state;
+            stateOption.text = state;
+            stateSelect.appendChild(stateOption);
+        });
+    }
+}
+
+getState();
+
+function getCountry() {
+    const url ="https://restcountries.eu/rest/v2/all";
+    get(url).then(response => {
+        buildCountryList(response);
+    })
+
+    function buildCountryList(responseObject) {
+        let countryArray = [];
+        responseObject.forEach(element => countryArray.push(element["name"]));
+        addCountrySelectors(countryArray);
+    }
+
+    function addCountrySelectors(array1) {
+        const countrySelect = document.querySelector("#countryInput");
+        array1.map(country => {
+            let countryOption = document.createElement('option');
+            countryOption.value = country;
+            countryOption.text = country;
+            countrySelect.appendChild(countryOption);
+        });
+    }
+}
+
+getCountry();
 
 // Want to try to add a template literal here.
-function updateBody(currentTemp, feelsLike, description, high, low) {
+function updateBody(city, country, currentTemp, feelsLike, description, high, low) {
+    let reportArray = [city, country]
+    const placeholders = document.querySelectorAll('.location_placeholder');
+    placeholders.forEach(function (placeholders, index) {
+        placeholders.innerHTML = reportArray[index];
+    });
+
     const div1 = document.querySelector('#reportCurrentTemp');
     div1.innerHTML = currentTemp;
     const div2 = document.querySelector('#reportFeelsLike');
