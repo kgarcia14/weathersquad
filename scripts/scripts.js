@@ -6,16 +6,15 @@ const generateWeather = document.querySelector('#generateWeather')
 generateWeather.addEventListener('submit', event => {
     event.preventDefault();
 
-    const inputSelectors = document.querySelector('input');
+    const citySelector = document.querySelector('#cityInput');
+    const stateSelector = document.querySelector('#stateInput')
+    const countrySelector = document.querySelector('#countryInput')
     const placeholders = document.querySelectorAll('.location_placeholder');
 
-    let inputArray = [];
-    inputSelectors.forEach(inputItem => {
-        inputArray.push(inputItem);
-    })
+    
 
-    // Need to update to pull city and country from API (not user input).
-    // As far as printing the state, might could pull from separate API.
+    let inputArray = [citySelector, stateSelector, countrySelector];
+
     placeholders.forEach(function (placeholders, index) {
         placeholders.innerHTML = inputArray[index].value;
         getWeather(inputArray[0].value, inputArray[1].value, inputArray[2].value)
@@ -24,6 +23,7 @@ generateWeather.addEventListener('submit', event => {
 
 function getWeather(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
+    console.log(url);
     get(url).then(response => {
         updateBody(response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
     });
