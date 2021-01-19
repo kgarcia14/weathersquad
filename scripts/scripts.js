@@ -6,7 +6,7 @@ const generateWeather = document.querySelector('#generateWeather')
 generateWeather.addEventListener('submit', event => {
     event.preventDefault();
 
-    const inputSelectors = document.querySelectorAll('input');
+    const inputSelectors = document.querySelector('input');
     const placeholders = document.querySelectorAll('.location_placeholder');
 
     let inputArray = [];
@@ -29,6 +29,38 @@ function getWeather(city, state, country) {
     });
 }
 
+function getState() {
+    const url ="https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json";
+    get(url).then(response => {
+        buildStateList(response);
+    })
+
+    function buildStateList(responseObject) {
+        let stateArray = [];
+        responseObject.forEach(element => stateArray.push(element["name"]));
+        addStateSelectors(stateArray)
+    }
+
+    function addStateSelectors(array1) {
+        // Filter out certain state options
+        const filteredArray = array1.filter(state => {
+            if (state !== 'American Samoa' && state !== "Federated States Of Micronesia" && state !== "Marshall Islands" && state !== "Northern Mariana Islands" && state !== "Palau" && state !== "Virgin Islands") {
+                return state;
+            }
+        });
+        
+        const stateSelect = document.querySelector("#stateInput");
+        filteredArray.map(state => {
+            let stateOption = document.createElement('option');
+            stateOption.value = state;
+            stateOption.text = state;
+            stateSelect.appendChild(stateOption);
+        });
+    }
+}
+
+getState();
+
 function getCountry() {
     const url ="https://restcountries.eu/rest/v2/all";
     get(url).then(response => {
@@ -37,8 +69,8 @@ function getCountry() {
 
     function buildCountryList(responseObject) {
         let countryArray = [];
-        responseObject.forEach(element => countryArray.push(element["name"]))
-        addCountrySelectors(countryArray)
+        responseObject.forEach(element => countryArray.push(element["name"]));
+        addCountrySelectors(countryArray);
     }
 
     function addCountrySelectors(array1) {
