@@ -47,14 +47,15 @@
                         />
                     </label>
                 </div>
-                <button type="submit" id="btn">Submit</button>
+                <button type="submit" id="btn" >Submit</button>
             </form>
         </div>
         <div id="reportWeatherData" class="reportWeatherData">
             <h3>Reporting Weather Conditions For <span class="location_placeholder"></span><span class="location_placeholder"></span><span class="location_placeholder"></span></h3>
             <div>
                 <p>Current Temperature:</p>
-                <div id="reportCurrentTemp"></div>
+                <div id="reportCurrentTemp">
+                </div>
             </div>
             <div>
                 <p>Feels Like:</p>
@@ -72,9 +73,14 @@
                 <p>Low:</p>
                 <div id="reportLow"></div>
             </div>
+            <div>
+                <div id="generateSetup">
+                </div>
+            </div>
         </div>
     </main>
 </body>
 <script src="scripts/get.js"></script>
 <script src="scripts/scripts.js"></script>
+<script src="scripts/joke.js"></script>
 </html>
