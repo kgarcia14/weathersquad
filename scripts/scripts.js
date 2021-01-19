@@ -83,13 +83,13 @@ function updateBody(city, country, currentTemp, feelsLike, description, high, lo
     });
 
     const div1 = document.querySelector('#reportCurrentTemp');
-    div1.innerHTML = currentTemp;
+    div1.innerHTML = (currentTemp + "<sup>°F</sup>");
     const div2 = document.querySelector('#reportFeelsLike');
-    div2.innerHTML = feelsLike;
+    div2.innerHTML = (feelsLike + "<sup>°F</sup>");
     const div3 = document.querySelector('#reportDescription');
     div3.innerHTML = description;
     const div4 = document.querySelector('#reportHigh');
-    div4.innerHTML = high;
+    div4.innerHTML = (high + "<sup>°F</sup>");
     const div5 = document.querySelector('#reportLow');
-    div5.innerHTML = low;
+    div5.innerHTML = (low + "<sup>°F</sup>");
 }
