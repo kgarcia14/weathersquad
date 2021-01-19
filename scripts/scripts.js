@@ -9,23 +9,17 @@ generateWeather.addEventListener('submit', event => {
     const citySelector = document.querySelector('#cityInput');
     const stateSelector = document.querySelector('#stateInput')
     const countrySelector = document.querySelector('#countryInput')
-    const placeholders = document.querySelectorAll('.location_placeholder');
-
-    
 
     let inputArray = [citySelector, stateSelector, countrySelector];
-
-    placeholders.forEach(function (placeholders, index) {
-        placeholders.innerHTML = inputArray[index].value;
-        getWeather(inputArray[0].value, inputArray[1].value, inputArray[2].value)
-    })
+    getWeather(inputArray[0].value, inputArray[1].value, inputArray[2].value)
 });
 
 function getWeather(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
     console.log(url);
     get(url).then(response => {
-        updateBody(response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
+        console.log(response)
     });
 }
 
@@ -37,20 +31,14 @@ function getState() {
 
     function buildStateList(responseObject) {
         let stateArray = [];
-        responseObject.forEach(element => stateArray.push(element["name"]));
+        responseObject.forEach(element => stateArray.push(element["abbreviation"]));
         addStateSelectors(stateArray)
     }
 
     function addStateSelectors(array1) {
-        // Filter out certain state options
-        const filteredArray = array1.filter(state => {
-            if (state !== 'American Samoa' && state !== "Federated States Of Micronesia" && state !== "Marshall Islands" && state !== "Northern Mariana Islands" && state !== "Palau" && state !== "Virgin Islands") {
-                return state;
-            }
-        });
         
         const stateSelect = document.querySelector("#stateInput");
-        filteredArray.map(state => {
+        array1.map(state => {
             let stateOption = document.createElement('option');
             stateOption.value = state;
             stateOption.text = state;
@@ -87,7 +75,13 @@ function getCountry() {
 getCountry();
 
 // Want to try to add a template literal here.
-function updateBody(currentTemp, feelsLike, description, high, low) {
+function updateBody(city, country, currentTemp, feelsLike, description, high, low) {
+    let reportArray = [city, country]
+    const placeholders = document.querySelectorAll('.location_placeholder');
+    placeholders.forEach(function (placeholders, index) {
+        placeholders.innerHTML = reportArray[index];
+    });
+
     const div1 = document.querySelector('#reportCurrentTemp');
     div1.innerHTML = currentTemp;
     const div2 = document.querySelector('#reportFeelsLike');
