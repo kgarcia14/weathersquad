@@ -26,11 +26,33 @@ function getWeather(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
     get(url).then(response => {
         updateBody(response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
-        console.log(response)
     });
-    console.log(url);
 }
 
+function getCountry() {
+    const url ="https://restcountries.eu/rest/v2/all";
+    get(url).then(response => {
+        buildCountryList(response);
+    })
+
+    function buildCountryList(responseObject) {
+        let countryArray = [];
+        responseObject.forEach(element => countryArray.push(element["name"]))
+        addCountrySelectors(countryArray)
+    }
+
+    function addCountrySelectors(array1) {
+        const countrySelect = document.querySelector("#countryInput");
+        array1.map(country => {
+            let countryOption = document.createElement('option');
+            countryOption.value = country;
+            countryOption.text = country;
+            countrySelect.appendChild(countryOption);
+        });
+    }
+}
+
+getCountry();
 
 // Want to try to add a template literal here.
 function updateBody(currentTemp, feelsLike, description, high, low) {
