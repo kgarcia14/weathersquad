@@ -10,7 +10,6 @@ generateWeather.addEventListener('submit', event => {
     const stateSelector = document.querySelector('#stateInput')
     const countrySelector = document.querySelector('#countryInput')
 
-    console.log(stateSelector.value);
     if (stateSelector.value !== 'None' && stateSelector.value !== 'Select State') {
         let inputArray = [citySelector, stateSelector, countrySelector];
         getWeatherWithState(inputArray[0].value, inputArray[1].value, inputArray[2].value);
@@ -30,7 +29,6 @@ function getWeatherWithState(city, state, country) {
 
 function getWeatherNoState(city, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${apiKey}`;
-    console.log(url);
     const state = ""
     get(url).then(response => {
         updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
