@@ -10,7 +10,6 @@ generateWeather.addEventListener('submit', event => {
     const stateSelector = document.querySelector('#stateInput')
     const countrySelector = document.querySelector('#countryInput')
 
-    console.log(stateSelector.value);
     if (stateSelector.value !== 'None' && stateSelector.value !== 'Select State') {
         let inputArray = [citySelector, stateSelector, countrySelector];
         getWeatherWithState(inputArray[0].value, inputArray[1].value, inputArray[2].value);
@@ -22,33 +21,29 @@ generateWeather.addEventListener('submit', event => {
 
 function getWeatherWithState(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
-    console.log(url);
     get(url).then(response => {
-        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
         console.log(response)
     });
 }
 
 function getWeatherNoState(city, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${apiKey}`;
-    console.log(url);
+    const state = ""
     get(url).then(response => {
-        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
         console.log(response)
     });
 }
 
 function getState() {
-    const url ="https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_titlecase.json";
-    get(url).then(response => {
-        buildStateList(response);
-    })
-
     function buildStateList(responseObject) {
         let stateArray = [];
         responseObject.forEach(element => stateArray.push(element["abbreviation"]));
         addStateSelectors(stateArray)
     }
+
+    buildStateList(masterStateList);
 
     function addStateSelectors(array1) {
         
@@ -89,12 +84,20 @@ function getCountry() {
 
 getCountry();
 
-function updateBody(city, country, currentTemp, feelsLike, description, high, low) {
-    let reportArray = [city, country]
-    const placeholders = document.querySelectorAll('.location_placeholder');
-    placeholders.forEach(function (placeholders, index) {
-        placeholders.innerHTML = reportArray[index];
-    });
+function updateBody(city, state, country, currentTemp, feelsLike, description, high, low) {
+    if (country === "US") {
+        let reportArray = [city, state]
+        const placeholders = document.querySelectorAll('.location_placeholder');
+        placeholders.forEach(function (placeholders, index) {
+            placeholders.innerHTML = reportArray[index];
+        });
+    } else {
+        let reportArray = [city, country]
+        const placeholders = document.querySelectorAll('.location_placeholder');
+        placeholders.forEach(function (placeholders, index) {
+            placeholders.innerHTML = reportArray[index];
+        });
+    }
 
     const masterDiv = document.querySelector('#reportWeatherData');
     masterDiv.style.display = "initial";
