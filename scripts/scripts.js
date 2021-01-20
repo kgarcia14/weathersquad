@@ -89,7 +89,6 @@ function getCountry() {
 
 getCountry();
 
-// Want to try to add a template literal here.
 function updateBody(city, country, currentTemp, feelsLike, description, high, low) {
     let reportArray = [city, country]
     const placeholders = document.querySelectorAll('.location_placeholder');
@@ -97,6 +96,8 @@ function updateBody(city, country, currentTemp, feelsLike, description, high, lo
         placeholders.innerHTML = reportArray[index];
     });
 
+    const masterDiv = document.querySelector('#reportWeatherData');
+    masterDiv.style.display = "initial";
     const div1 = document.querySelector('#reportCurrentTemp');
     div1.innerHTML = (`<p class="output-span">Current Temperature: </p>` + `<p class="output-p">${currentTemp}<sup>°F</sup></p>`);
     const div2 = document.querySelector('#reportFeelsLike');
