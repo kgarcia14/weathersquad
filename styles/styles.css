@@ -102,6 +102,7 @@ label {
 }
 
 .reportWeatherData {
+  display: none;
   font-size: 13px;
   background-color: #1b1b1b;
   border-radius: 12px;
