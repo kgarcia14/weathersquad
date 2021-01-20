@@ -10,6 +10,7 @@
     <nav class=" nav-container">
         <img class="logo" src="images/weatherSquadlogoblue.png" alt="app logo">
         <div>
+            <a class="home" href="index.html">Home</a>
             <a class="about" href="#">About Us</a>
             <a class="contact" href="#">Contact</a>
         </div>
@@ -25,14 +26,14 @@
                             name="cityInput"
                             id="cityInput"
                             class="input"
-                            placeholder="Enter name of city"
+                            placeholder="Enter City"
                         />
                     </label>
                 </div>
                 <div class="label-container">
                     <label>
-                        State:
-                        <select id="stateInput">
+                        State
+                        <select id="stateInput" class="dropdown state">
                             <option>Select State</option>
                             <option>None</option>
                         </select>
@@ -40,8 +41,8 @@
                 </div>
                 <div class="label-container">
                     <label>
-                        Country:
-                        <select id="countryInput">
+                        Country
+                        <select id="countryInput" class="dropdown usa">
                             <option>Select Country</option>
                             <option>USA</option>
                         </select>
@@ -54,7 +55,7 @@
 
         <div id="reportWeatherData" class="reportWeatherData">
             <span class="location_placeholder"></span>
-            <span class="location_placeholder"></span><button class="unit-btn">F</button><button class="unit-btn-celsius">C</button>
+            <span class="location_placeholder"></span>
             <div>
                 <p>Current Temperature:</p>
                 <div id="reportCurrentTemp">
