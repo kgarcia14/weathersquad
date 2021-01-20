@@ -28,11 +28,9 @@ main {
   height: 100vh;
 }
 
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.navbar {
+  display: none;
+ }
 
 .home {
   text-decoration: none;
@@ -126,24 +124,6 @@ button:hover {
   cursor: pointer;
   opacity: 0.9;
   outline: none;
-}
-
-.unit-btn {
-  background-color: #1b1b1b;
-  width: 25px;
-  height: 10px;
-  border-radius: 0;
-  margin-left: 102px;
-  color: #8b8b8b;
-}
-
-.unit-btn-celsius {
-  background-color: #1b1b1b;
-  width: 25px;
-  height: 20px;
-  border-radius: 0;
-  border-left: 1px solid #8b8b8b;
-  color: #8b8b8b;
 }
 
 @media screen and (min-width: 370px) {
@@ -300,7 +280,7 @@ button:hover {
   .logo {
     height: 100px;
     width: 200px;
-    margin: 15px 0 40px 30px;
+    margin: 15px 0 40px 45px;
   }
 
   .form-container {
@@ -331,7 +311,7 @@ button:hover {
     width: 450px;
     height: 32px;
     font-size: 20px;
-    margin: 18px 0 20px 0;
+    margin: 20px 0 40px 0;
     border-radius: 16px;
   }
 
@@ -341,5 +321,96 @@ button:hover {
 
   .reportWeatherData {
     font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .logo {
+    height: 112px;
+    width: 224px;
+    margin: 28px 0 30px 30px;
+  }
+
+  .navbar {
+    display: unset;
+    display: flex;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+  
+  li {
+    list-style-type: none;
+    font-size: 1.3rem;
+    padding: 2px 20px 2px 0;
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #aaaaaa;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  .form-container {
+    margin-top: 35px;
+    width: 900px;
+  }
+
+  .reportWeatherData {
+    width: 900px;
+  }
+
+  .nav-home {
+    border-right: 1px solid #333;
+  }
+
+  .nav-about {
+    border-right: 1px solid #333;
+  }
+
+  .input {
+    width: 450px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  .dropdown {
+    width: 450px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  button {
+    width: 450px;
+    height: 42px;
+    font-size: 20px;
+    margin: 25px 0 40px 0;
+    border-radius: 16px;
+  }
+
+  label {
+    font-size: 23px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .nav-contact {
+    margin-right: 150px;
+  }
+
+  .logo {
+    margin-left: 150px;
   }
 }
