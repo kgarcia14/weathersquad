@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front End Project</title>
+    <title>weatherSquad | Home</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body>
     <nav class=" nav-container">
-        <img class="logo" src="images/weatherSquadlogoblue.png" alt="app logo">
-        <div>
-            <a class="home" href="index.html">Home</a>
-            <a class="about" href="#">About Us</a>
-            <a class="contact" href="#">Contact</a>
+        <a href="index.html"><img class="logo" src="images/weatherSquadlogoblue2.png" alt="app logo"></a>
+
+        <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+
     <main class="main-container">
         <div>
             <form class="form-container" id="generateWeather" action="#" method="POST">

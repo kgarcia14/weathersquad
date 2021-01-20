@@ -19,9 +19,9 @@ body {
 }
 
 .logo {
-  height: 100px;
-  width: 100px;
-  margin-left: 20px;
+  height: 55px;
+  width: 110px;
+  margin: 10px 0 20px 12px;
 }
 
 main {
@@ -39,20 +39,6 @@ main {
   color: #8b8b8b;
   font-size: 14px;
   margin-right: 5px;
-}
-
-.about {
-  text-decoration: none;
-  color: #8b8b8b;
-  font-size: 14px;
-  margin-right: 5px;
-}
-
-.contact {
-  text-decoration: none;
-  color: #8b8b8b;
-  font-size: 14px;
-  margin-right: 10px;
 }
 
 label {
@@ -161,14 +147,13 @@ button:hover {
 
 @media screen and (min-width: 370px) {
   .logo {
-    height: 115px;
-    width: 115px;
-    margin-left: 30px;
+    height: 56px;
+    width: 112px;
+    margin: 10px 0 20px 15px;
   }
 
   .about {
     font-size: 15px;
-    margin-right: 25px;
   }
 
   .contact {
@@ -184,53 +169,42 @@ button:hover {
     width: 340px;
   }
 
-  .unit-btn {
-    margin-left: 150px;
-  }
-
   .input {
-    width: 200px;
-    height: 25px;
+    width: 210px;
+    height: 24px;
     margin-top: 5px;
+    border-radius: 13px;
   }
 
   .dropdown {
-    width: 200px;
-    height: 25px;
+    width: 210px;
+    height: 24px;
     margin-top: 5px;
+    border-radius: 13px;
   }
 
   label {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   button {
-    width: 200px;
-    height: 25px;
+    width: 210px;
+    height: 24px;
     font-size: 15px;
     margin: 15px 0 20px 0;
+    border-radius: 13px;
   }
 
   .reportWeatherData {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
 @media screen and (min-width: 410px) {
   .logo {
-    height: 130px;
+    height: 65px;
     width: 130px;
-    margin-left: 35px;
-  }
-
-  .about {
-    font-size: 15px;
-    margin-right: 25px;
-  }
-
-  .contact {
-    font-size: 15px;
-    margin-right: 30px;
+    margin: 10px 0 20px 19px;
   }
 
   .form-container {
@@ -241,86 +215,75 @@ button:hover {
     width: 370px;
   }
 
-  .unit-btn {
-    margin-left: 180px;
-  }
-
   .input {
     width: 230px;
-    height: 27px;
-    font-size: 16px;
+    height: 25px;
+    font-size: 15px;
     margin-top: 6px;
+    border-radius: 14px;
   }
 
   .dropdown {
     width: 230px;
-    height: 27px;
+    height: 25px;
     margin-top: 6px;
+    border-radius: 14px;
   }
 
   button {
     width: 230px;
-    height: 27px;
+    height: 25px;
     font-size: 16px;
     margin: 16px 0 20px 0;
+    border-radius: 14px;
   }
 
   label {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .reportWeatherData {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 650px) {
   .logo {
-    height: 200px;
-    width: 200px;
-    margin-left: 80px;
-  }
-
-  .about {
-    font-size: 19px;
-    margin-right: 25px;
-  }
-
-  .contact {
-    font-size: 19px;
-    margin-right: 80px;
+    height: 90px;
+    width: 180px;
+    margin: 15px 0 30px 20px;
   }
 
   .form-container {
-    width: 600px;
+    width: 590px;
   }
 
   .reportWeatherData {
-    width: 600px;
-  }
-
-  .unit-btn {
-    margin-left: 300px;
+    width: 590px;
   }
 
   .input {
-    width: 300px;
-    height: 25px;
-    font-size: 17px;
+    width: 350px;
+    height: 28px;
+    font-size: 18px;
     margin-top: 8px;
+    border-radius: 15px;
   }
 
   .dropdown {
-    width: 300px;
-    height: 25px;
+    width: 350px;
+    height: 28px;
+    font-size: 17px;
     margin-top: 8px;
+    border-radius: 15px;
   }
 
   button {
-    width: 300px;
-    height: 25px;
-    font-size: 18px;
+    width: 350px;
+    height: 28px;
+    font-size: 19px;
     margin: 17px 0 20px 0;
+    border-radius: 15px;
   }
 
   label {
@@ -329,5 +292,53 @@ button:hover {
 
   .reportWeatherData {
     font-size: 19px;
+  }
+}
+
+@media screen and (min-width: 765px) {
+  .logo {
+    height: 100px;
+    width: 200px;
+    margin: 15px 0 40px 30px;
+  }
+
+  .form-container {
+    width: 700px;
+  }
+
+  .reportWeatherData {
+    width: 700px;
+  }
+
+  .input {
+    width: 450px;
+    height: 32px;
+    font-size: 19px;
+    margin-top: 8px;
+    border-radius: 16px;
+  }
+
+  .dropdown {
+    width: 450px;
+    height: 32px;
+    font-size: 19px;
+    margin-top: 8px;
+    border-radius: 16px;
+  }
+
+  button {
+    width: 450px;
+    height: 32px;
+    font-size: 20px;
+    margin: 18px 0 20px 0;
+    border-radius: 16px;
+  }
+
+  label {
+    font-size: 22px;
+  }
+
+  .reportWeatherData {
+    font-size: 20px;
   }
 }
