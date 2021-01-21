@@ -26,7 +26,6 @@ function getWeatherWithState(city, state, country) {
         updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
         console.log(response.weather[0].icon)
         console.log(response)
-        reportEasterEgg(response.weather[0].description)
     });
 }
 
@@ -38,7 +37,6 @@ function getWeatherNoState(city, country) {
         updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
         console.log(response.weather[0].icon)
         console.log(response)
-        reportEasterEgg(response.weather[0].description)
     });
 }
 
@@ -119,12 +117,13 @@ function updateBody(city, state, country, currentTemp, feelsLike, high, low, des
     div6.innerHTML = (`<p class="span">Current Conditions: </p>` + `<p class="output-p">${description}`)
 }
 
-function reportEasterEgg (currentConditions) {
+function reportEasterEgg () {
     const masterDiv = document.querySelector('#reportEasterEgg');
+    // if (iconCode === "01d") 
     masterDiv.style.display = "initial";
-    if (currentConditions.includes("clouds")) {
-        console.log("The description includes 'clouds'")
-    } else {
-        console.log("The description does NOT include 'clouds'")
-    }
+}
+
+function hideEasterEgg () {
+    const masterDiv = document.querySelector('#reportEasterEgg');
+    masterDiv.style.display = "none";
 }
