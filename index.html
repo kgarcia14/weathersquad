@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherSquad | Home</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/menu.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo-container">
+            <div>
+                <a href="index.html"><img class="logo" src="images/weatherSquadlogoblue2.png" alt="app logo"></a>
+            </div>
+            <div>
+                <ul class="navbar">
+                    <li class="nav-home"><a href="index.html">Home</a></li>
+                    <li class="nav-about"><a href="about.html">About Us</a></li>
+                    <li class="nav-contact"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+                <div>
+                    <div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div>
+            <form class="form-container" id="generateWeather" action="#" method="POST">
+                <div class="label-container">
+                    <label>
+                        City
+                        <input
+                            type="text"
+                            name="cityInput"
+                            id="cityInput"
+                            class="input"
+                            placeholder="Enter City"
+                        />
+                    </label>
+                </div>
+                <div class="label-container">
+                    <label>
+                        State
+                        <select id="stateInput" class="dropdown state">
+                            <option>Select State</option>
+                            <option>None</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="label-container">
+                    <label>
+                        Country
+                        <select id="countryInput" class="dropdown usa">
+                            <option>Select Country</option>
+                            <option>USA</option>
+                        </select>
+                    </label>
+                </div>
+                <button type="submit" id="btn">Search</button>
+            </form>
+        </div>
+
+
+        <div id="reportWeatherData" class="reportWeatherData" >
+            <span class="location_placeholder"></span>,
+            <span class="location_placeholder"></span>
+            <div>
+                <div id="animationIcon" class=""></div>
+            </div>
+            <div>
+                <div id="quote" class=""></div>
+            </div>
+
+            <div>
+                <div id="reportDescriptionMessage" class=""></div>
+            </div>
+            <div>
+                <div id="reportCurrentTemp">
+                </div>
+            </div>
+            <div>
+                <div id="reportFeelsLike"></div>
+            </div>
+            <div>
+                <div id="reportHigh"></div>
+            </div>
+            <div>
+                <div id="reportLow"></div>
+            </div>
+            <div>
+                <div id="generateSetup">
+                </div>
+            </div>
+        </div>
+
+        <div class="reportEasterEgg" id="reportEasterEgg">
+            <div id="eggDiv">
+            </div>
+        </div>
+    </main>
+</body>
+<script src="scripts/animations.js"></script>
+<script src="scripts/quotes.js"></script>
+<script src="scripts/joke.js"></script>
+<script src="scripts/get.js"></script>
+<script src="scripts/states.js"></script>
+<script src="scripts/scripts.js"></script>
+</html>
