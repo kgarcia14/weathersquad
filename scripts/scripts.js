@@ -117,12 +117,6 @@ function updateBody(city, state, country, currentTemp, feelsLike, high, low, des
     div6.innerHTML = (`<p class="span">Current Conditions: </p>` + `<p class="output-p">${description}`)
 }
 
-function reportEasterEgg () {
-    const masterDiv = document.querySelector('#reportEasterEgg');
-    // if (iconCode === "01d") 
-    masterDiv.style.display = "initial";
-}
-
 function hideEasterEgg () {
     const masterDiv = document.querySelector('#reportEasterEgg');
     masterDiv.style.display = "none";
