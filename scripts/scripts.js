@@ -23,8 +23,9 @@ function getWeatherWithState(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
     get(url).then(response => {
         updateAnimationBody(response.weather[0].icon)
-        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
         console.log(response.weather[0].icon)
+        console.log(response)
     });
 }
 
@@ -33,8 +34,9 @@ function getWeatherNoState(city, country) {
     const state = ""
     get(url).then(response => {
         updateAnimationBody(response.weather[0].icon)
-        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min)
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
         console.log(response.weather[0].icon)
+        console.log(response)
     });
 }
 
@@ -86,7 +88,7 @@ function getCountry() {
 
 getCountry();
 
-function updateBody(city, state, country, currentTemp, feelsLike, high, low) {
+function updateBody(city, state, country, currentTemp, feelsLike, high, low, description) {
     if (country === "US") {
         let reportArray = [city, state]
         const placeholders = document.querySelectorAll('.location_placeholder');
@@ -111,4 +113,6 @@ function updateBody(city, state, country, currentTemp, feelsLike, high, low) {
     div4.innerHTML = (`<p class="span">Today's High: </p>` + `<p class="output-p">${high}<sup>°F</sup></p>`);
     const div5 = document.querySelector('#reportLow');
     div5.innerHTML = (`<p class="span">Today's Low: </p>` + `<p class="output-p">${low}<sup>°F</sup></p>`);
+    const div6 = document.querySelector('#reportDescriptionMessage');
+    div6.innerHTML = (`<p class="span">Current Conditions: </p>` + `<p class="output-p">${description}`)
 }

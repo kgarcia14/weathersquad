@@ -738,75 +738,75 @@ const wind = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
 function updateAnimationBody(iconCode) {
     if (iconCode === "01d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = clearDay;
     };
     if (iconCode === "01n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = clearNight;
     };
     if (iconCode === "02d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyDay;
     };
     if (iconCode === "02n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyNight;
     };
     if (iconCode === "03d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = cloudy;
     };
     if (iconCode === "03n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = cloudy;
     };
     if (iconCode === "04d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = overcast;
     };
     if (iconCode === "04n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = overcast;
     };
     if (iconCode === "09d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = rain;
     };
     if (iconCode === "09n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = rain;
     };
     if (iconCode === "10d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyDayRain;
     };
     if (iconCode === "10n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyNightRain;
     };
     if (iconCode === "11d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = thunderstormDay;
     };
     if (iconCode === "11n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = thunderstormNight;
     };
     if (iconCode === "13d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = snow;
     };
     if (iconCode === "13n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = snow;
     };
     if (iconCode === "50d") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = mist;
     };
     if (iconCode === "50n") {
-        const div3 = document.querySelector('#reportDescription');
+        const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = mist;
     };
 }
