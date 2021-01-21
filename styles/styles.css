@@ -128,6 +128,16 @@ label {
   margin-bottom: 100px;
 }
 
+.reportEasterEgg {
+  display: none;
+  font-size: 13px;
+  background-color: #1b1b1b;
+  border-radius: 12px;
+  width: 290px;
+  padding: 30px;
+  margin-bottom: 100px;
+}
+
 button {
   width: 180px;
   height: 22px;
@@ -169,6 +179,10 @@ button:hover {
     width: 340px;
   }
 
+  .reportEasterEgg {
+    width: 340px;
+  }
+
   .input {
     width: 210px;
     height: 24px;
@@ -199,6 +213,10 @@ button:hover {
     font-size: 15px;
   }
 
+  .reportEasterEgg {
+    font-size: 15px;
+  }
+  
   svg {
     width: 130px;
     height: 130px;
@@ -235,6 +253,10 @@ button:hover {
     width: 370px;
   }
 
+  .reportEasterEgg {
+    width: 370px;
+  }
+
   .input {
     width: 230px;
     height: 25px;
@@ -265,6 +287,10 @@ button:hover {
   .reportWeatherData {
     font-size: 16px;
   }
+
+  .reportEasterEgg {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 650px) {
@@ -279,6 +305,10 @@ button:hover {
   }
 
   .reportWeatherData {
+    width: 590px;
+  }
+
+  .reportEasterEgg {
     width: 590px;
   }
 
@@ -313,6 +343,10 @@ button:hover {
   .reportWeatherData {
     font-size: 19px;
   }
+
+  .reportEasterEgg {
+    font-size: 19px;
+  }
 }
 
 @media screen and (min-width: 765px) {
@@ -327,6 +361,10 @@ button:hover {
   }
 
   .reportWeatherData {
+    width: 700px;
+  }
+
+  .reportEasterEgg {
     width: 700px;
   }
 
@@ -359,6 +397,10 @@ button:hover {
   }
 
   .reportWeatherData {
+    font-size: 20px;
+  }
+
+  .reportEasterEgg {
     font-size: 20px;
   }
 }
@@ -403,6 +445,10 @@ button:hover {
   }
 
   .reportWeatherData {
+    width: 900px;
+  }
+
+  .reportEasterEgg {
     width: 900px;
   }
 
