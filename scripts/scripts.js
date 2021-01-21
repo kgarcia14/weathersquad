@@ -22,8 +22,9 @@ generateWeather.addEventListener('submit', event => {
 function getWeatherWithState(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
     get(url).then(response => {
-        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
-        console.log(response)
+        updateAnimationBody(response.weather[0].icon)
+        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min)
+        console.log(response.weather[0].icon)
     });
 }
 
@@ -31,8 +32,9 @@ function getWeatherNoState(city, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${apiKey}`;
     const state = ""
     get(url).then(response => {
-        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.weather[0].description, response.main.temp_max, response.main.temp_min)
-        console.log(response)
+        updateAnimationBody(response.weather[0].icon)
+        updateBody(response.name, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min)
+        console.log(response.weather[0].icon)
     });
 }
 
@@ -84,7 +86,7 @@ function getCountry() {
 
 getCountry();
 
-function updateBody(city, state, country, currentTemp, feelsLike, description, high, low) {
+function updateBody(city, country, currentTemp, feelsLike, high, low) {
     if (country === "US") {
         let reportArray = [city, state]
         const placeholders = document.querySelectorAll('.location_placeholder');
@@ -105,8 +107,6 @@ function updateBody(city, state, country, currentTemp, feelsLike, description, h
     div1.innerHTML = (`<p class="output-span">Current Temperature: </p>` + `<p class="output-p">${currentTemp}<sup>°F</sup></p>`);
     const div2 = document.querySelector('#reportFeelsLike');
     div2.innerHTML = (`<p class="span">Feels Like: </p>` + `<p class="output-p">${feelsLike}<sup>°F</sup></p>`);
-    const div3 = document.querySelector('#reportDescription');
-    div3.innerHTML = (`<p class="span">Current Conditions: </p>` + `<p class="output-p">${description}</p>`);
     const div4 = document.querySelector('#reportHigh');
     div4.innerHTML = (`<p class="span">Today's High: </p>` + `<p class="output-p">${high}<sup>°F</sup></p>`);
     const div5 = document.querySelector('#reportLow');
