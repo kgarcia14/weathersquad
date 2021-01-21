@@ -740,73 +740,91 @@ function updateAnimationBody(iconCode) {
     if (iconCode === "01d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = clearDay;
+        hideEasterEgg();
     };
     if (iconCode === "01n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = clearNight;
+        hideEasterEgg();
     };
     if (iconCode === "02d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyDay;
+        getJoke();
     };
     if (iconCode === "02n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyNight;
+        getJoke();
     };
     if (iconCode === "03d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = cloudy;
+        getJoke();
     };
     if (iconCode === "03n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = cloudy;
+        getJoke();
     };
     if (iconCode === "04d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = overcast;
+        getJoke();
     };
     if (iconCode === "04n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = overcast;
+        getJoke();
     };
     if (iconCode === "09d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = rain;
+        getJoke();
     };
     if (iconCode === "09n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = rain;
+        getJoke();
     };
     if (iconCode === "10d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyDayRain;
+        getJoke();
     };
     if (iconCode === "10n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyNightRain;
+        getJoke();
     };
     if (iconCode === "11d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = thunderstormDay;
+        getJoke();
     };
     if (iconCode === "11n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = thunderstormNight;
+        getJoke();
     };
     if (iconCode === "13d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = snow;
+        hideEasterEgg();
     };
     if (iconCode === "13n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = snow;
+        hideEasterEgg();
     };
     if (iconCode === "50d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = mist;
+        getJoke();
     };
     if (iconCode === "50n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = mist;
+        getJoke();
     };
 }
