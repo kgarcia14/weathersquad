@@ -17,7 +17,7 @@ function getJoke() {
 }
 
 function updateJokeBody(setup, punchline) {
-    const div6 = document.querySelector('#generateSetup');
+    const div6 = document.querySelector('#jokeEgg');
     div6.innerHTML = `
     <h3>${setup}</h3>
     <p>${punchline}</p>`;
