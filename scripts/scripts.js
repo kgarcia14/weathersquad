@@ -120,10 +120,11 @@ function updateBody(city, state, country, currentTemp, feelsLike, high, low, des
 }
 
 function reportEasterEgg (currentConditions) {
+    const masterDiv = document.querySelector('#reportEasterEgg');
+    masterDiv.style.display = "initial";
     if (currentConditions.includes("clouds")) {
         console.log("The description includes 'clouds'")
     } else {
         console.log("The description does NOT include 'clouds'")
     }
-
 }
