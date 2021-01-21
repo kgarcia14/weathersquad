@@ -750,12 +750,12 @@ function updateAnimationBody(iconCode) {
     if (iconCode === "02d") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyDay;
-        getJoke();
+        hideEasterEgg();
     };
     if (iconCode === "02n") {
         const div3 = document.querySelector('#animationIcon');
         div3.innerHTML = partlyCloudyNight;
-        getJoke();
+        hideEasterEgg();
     };
     if (iconCode === "03d") {
         const div3 = document.querySelector('#animationIcon');
