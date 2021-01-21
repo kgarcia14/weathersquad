@@ -22,10 +22,11 @@ generateWeather.addEventListener('submit', event => {
 function getWeatherWithState(city, state, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&units=imperial&appid=${apiKey}`;
     get(url).then(response => {
-        updateAnimationBody(response.weather[0].icon)
-        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
-        console.log(response.weather[0].icon)
-        console.log(response)
+        updateAnimationBody(response.weather[0].icon);
+        updateQuoteBody(response.weather[0].icon);
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description);
+        console.log(response.weather[0].icon);
+        console.log(response);
     });
 }
 
@@ -33,10 +34,11 @@ function getWeatherNoState(city, country) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${apiKey}`;
     const state = ""
     get(url).then(response => {
-        updateAnimationBody(response.weather[0].icon)
-        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description)
-        console.log(response.weather[0].icon)
-        console.log(response)
+        updateAnimationBody(response.weather[0].icon);
+        updateQuoteBody(response.weather[0].icon);
+        updateBody(response.name, state, response.sys.country, response.main.temp, response.main.feels_like, response.main.temp_max, response.main.temp_min, response.weather[0].description);
+        console.log(response.weather[0].icon);
+        console.log(response);
     });
 }
 
