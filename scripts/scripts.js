@@ -86,7 +86,7 @@ function getCountry() {
 
 getCountry();
 
-function updateBody(city, country, currentTemp, feelsLike, high, low) {
+function updateBody(city, state, country, currentTemp, feelsLike, high, low) {
     if (country === "US") {
         let reportArray = [city, state]
         const placeholders = document.querySelectorAll('.location_placeholder');
