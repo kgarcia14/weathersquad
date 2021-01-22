@@ -100,6 +100,17 @@ label {
 }
 
 .reportWeatherData {
+  color: #8b8b8b;
+}
+
+.quotes {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #3d8dbb;
+  font-style: italic;
+}
+
+.reportWeatherData {
   display: none;
   background-color: #1b1b1b;
   border-radius: 12px;
@@ -141,11 +152,13 @@ svg {
 .span {
   margin: 0;
   font-size: 15px;
+  color: #cfcfcf;
 }
 
 .output-span {
   margin: 0;
   font-size: 15px;
+  color: #cfcfcf;
 }
 
 .output-p {
@@ -155,6 +168,11 @@ svg {
 
 .egg-font {
   font-size: 14px;
+  color: #cfcfcf;
+}
+
+.reportEasterEgg {
+  text-align: center;
 }
 
 /* about.html styling */
@@ -221,12 +239,46 @@ h4 {
 
 footer {
   position: sticky;
+  text-align: center;
 }
 
 .pro-div {
   margin: 30px;
 }
 
+/* Contact Us Styling */
+.contact-main {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  margin-top: 50px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  border-radius: 12px;
+  width: 290px;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.label-p {
+  margin: 0;
+  color: #e4e4e4;
+}
+
+.contact-p {
+  margin: 5px 0 20px 0;
+}
+
+.contact-h2 {
+  margin-bottom: 30px;
+  color: #8b8b8b;
+}
 
 
 @media screen and (min-width: 370px) {
@@ -254,6 +306,10 @@ footer {
   }
 
   .reportEasterEgg {
+    width: 340px;
+  }
+
+  .contact-container {
     width: 340px;
   }
 
@@ -332,6 +388,10 @@ footer {
   }
 
   .reportEasterEgg {
+    width: 370px;
+  }
+
+  .contact-container {
     width: 370px;
   }
 
@@ -415,6 +475,24 @@ footer {
     padding: 40px;
   }
 
+  .contact-container {
+    width: 590px;
+    margin-top: 45px;
+  }
+
+  .label-p {
+    font-size: 25px;
+  }
+  
+  .contact-p {
+    margin: 5px 0 20px 0;
+  }
+  
+  .contact-h2 {
+    margin-bottom: 45px;
+    font-size: 35px;
+  }
+  
   .input {
     width: 350px;
     height: 28px;
@@ -469,6 +547,10 @@ footer {
 
   .egg-font {
     font-size: 22px;
+  }
+
+  .quotes {
+    font-size: 20px;
   }
 
   /* about.html styling */
@@ -596,6 +678,10 @@ footer {
   .egg-font {
     font-size: 25px;
   }
+
+  .contact-container {
+    width: 700px;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -697,6 +783,29 @@ footer {
 
   .footer {
     margin: 75px 0 0 15px;
+  }
+
+  .quotes {
+    font-size: 24px;
+  }
+
+  .contact-container {
+    width: 900px;
+    margin-top: 45px;
+  }
+
+  .label-p {
+    font-size: 30px;
+  }
+  
+  .contact-p {
+    margin: 5px 0 20px 0;
+    font-size: 25px;
+  }
+  
+  .contact-h2 {
+    margin-bottom: 45px;
+    font-size: 35px;
   }
 }
 
