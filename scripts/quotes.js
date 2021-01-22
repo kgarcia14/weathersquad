@@ -6,13 +6,15 @@ const clearNightQuote = "'Mortal as I am, I know that I am born for a day. But w
 
 const cloudyQuote = "'A cloudy morning does not signify that the entire day is gonna be rainy! What's pressing you down today has nothing to change about your great future! Let patience be your inspiration.' - Israelmore Ayivor"
 
+const cloudyNightQuote = "'On a cloudy night, when nothing seems above, still, there is love.  Always love. For something from someone It's never done. Never. - Deepak Rana'"
+
 const mistQuote = "'Knowledge is soon changed, then lost in the mist, an echo half-heard.' - Gene Wolfe"
 
 const overcastQuote = "'A cloudy day is no match for a sunny disposition.' - William Arthur Ward"
 
 const partlyCloudyDayRainQuote = "'Love like rain, can nourish from above, drenching couples with a soaking joy. But sometimes under the angry heat of life, love dries on the surface and must nourish from below, tending to its roots keeping itself alive.' - Paulo Coelho"
 
-const partlyCloudyDayQuote = "enter quote here"
+const partlyCloudyDayQuote = "'Sometimes the clouds in the sky are mistaken. They didn’t come to block the sunlight. They came to embrace it. ― Kaylee Stepkoski'"
 
 const partlyCloudyNightRainQuote = "'Let's just sit quietly and listen to the secrets the rain wants to tell us.' - Jack Kerouac"
 
@@ -47,7 +49,7 @@ function updateQuoteBody(iconCode) {
     };
     if (iconCode === "03n") {
         const div4 = document.querySelector('#quote');
-        div4.innerHTML = cloudyQuote;
+        div4.innerHTML = cloudyNightQuote;
     };
     if (iconCode === "04d") {
         const div4 = document.querySelector('#quote');
