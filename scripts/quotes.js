@@ -73,7 +73,7 @@ function updateQuoteBody(iconCode) {
     };
     if (iconCode === "10n") {
         const div4 = document.querySelector('#quote');
-        div4.innerHTML = partlyCloudyNightRain;
+        div4.innerHTML = partlyCloudyNightRainQuote;
     };
     if (iconCode === "11d") {
         const div4 = document.querySelector('#quote');
