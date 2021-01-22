@@ -29,8 +29,6 @@ function getJoke2() {
 function updateJokeBody(setup, punchline) {
     const div7 = document.querySelector('#eggDiv');
     div7.innerHTML = `
-    <h3>Looks like it is dreary out. How about a joke to brighten your day?</h3>
-    <button type="submit" id="btnJ">Tell me a joke</button>
-    <h4>${setup}</h4>
+    <h3>${setup}</h3>
     <p>${punchline}</p>`;
 }
