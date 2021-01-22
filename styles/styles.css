@@ -136,11 +136,12 @@ button {
   color: #e4e4e4;
   font-size: 14px;
   margin: 20px 0 20px 0;
+  outline: none;
 }
 
 button:hover {
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.8;
   outline: none;
 }
 
@@ -233,13 +234,9 @@ h4 {
   color: #8d8d8d;
 }
 
-.footer {
-  margin: 30px 0 0 8px;
-}
-
 footer {
-  position: sticky;
   text-align: center;
+  margin-top: 45px;
 }
 
 .pro-div {
@@ -779,10 +776,6 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     margin-top: 40px;
-  }
-
-  .footer {
-    margin: 75px 0 0 15px;
   }
 
   .quotes {
